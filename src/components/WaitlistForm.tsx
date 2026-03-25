@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { createClient } from "@/lib/supabase/client";
+import { createBrowserSupabaseClient } from "@/lib/supabase/client";
 
 export function WaitlistForm() {
   const [email, setEmail] = useState("");
@@ -13,7 +13,7 @@ export function WaitlistForm() {
     setIsSubmitting(true);
     setMessage("");
 
-    const supabase = createClient();
+    const supabase = createBrowserSupabaseClient();
     const { error } = await supabase
       .from("waitlist_signups")
       .insert([{ email }]);
