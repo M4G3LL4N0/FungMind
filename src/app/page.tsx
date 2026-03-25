@@ -6,6 +6,17 @@ export default function Home() {
       <main className="flex flex-1 w-full max-w-6xl flex-col items-center justify-between py-32 px-8">
         {/* Hero Section */}
         <section className="w-full max-w-4xl text-center space-y-8 mb-32">
+          <nav className="flex gap-8 justify-center mb-16">
+            <Link href="/science" className="text-zinc-400 hover:text-teal-400 transition-colors">
+              Science
+            </Link>
+            <Link href="/products" className="text-zinc-400 hover:text-teal-400 transition-colors">
+              Products
+            </Link>
+            <Link href="/investors" className="text-zinc-400 hover:text-teal-400 transition-colors">
+              Investors
+            </Link>
+          </nav>
           <h1 className="text-6xl font-bold bg-gradient-to-r from-green-400 to-teal-500 bg-clip-text text-transparent">
             Unlocking the Power of Fungi
           </h1>
