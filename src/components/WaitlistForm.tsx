@@ -21,7 +21,7 @@ export function WaitlistForm() {
     if (error) {
       setMessage("Error joining waitlist. Please try again.");
     } else {
-      setMessage("Thank you! You're now on the waitlist.");
+      setMessage("Access secured! Welcome to the founding circle.");
       setEmail("");
     }
     setIsSubmitting(false);
@@ -34,7 +34,7 @@ export function WaitlistForm() {
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="Enter your email"
+          placeholder="Your best email"
           required
           className="flex-1 px-4 py-2 rounded-lg bg-zinc-900 text-zinc-100 border border-zinc-800 focus:outline-none focus:ring-2 focus:ring-teal-500"
         />
@@ -43,7 +43,7 @@ export function WaitlistForm() {
           disabled={isSubmitting}
           className="px-6 py-2 rounded-lg bg-gradient-to-r from-green-400 to-teal-500 text-black font-medium hover:opacity-90 transition-opacity"
         >
-          {isSubmitting ? "Joining..." : "Join Waitlist"}
+          {isSubmitting ? "Securing access..." : "Get Founding Access"}
         </button>
       </div>
       {message && (

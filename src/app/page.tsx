@@ -7,12 +7,15 @@ export default function Home() {
         {/* Hero Section */}
         <section className="w-full max-w-4xl text-center space-y-8 mb-32">
           <h1 className="text-6xl font-bold bg-gradient-to-r from-green-400 to-teal-500 bg-clip-text text-transparent">
-            Unlocking the Power of Fungi
+            The Fungal Revolution Starts Here
           </h1>
           <p className="text-xl text-zinc-400">
-            FungMind is pioneering the next frontier in biotech - harnessing the untapped potential of fungi to revolutionize health, performance, and sustainable innovation.
+            Join the founding circle for exclusive first access to our groundbreaking fungal innovations.
           </p>
-          <WaitlistForm />
+          <div className="space-y-4">
+            <p className="text-sm text-zinc-500">Limited to 100 founding members</p>
+            <WaitlistForm />
+          </div>
         </section>
 
         {/* Platform Thesis */}
@@ -75,9 +78,15 @@ export default function Home() {
         {/* Final CTA */}
         <section className="w-full max-w-4xl text-center space-y-8">
           <h2 className="text-4xl font-bold text-zinc-100">
-            Join the Fungal Revolution
+            Be Among the First
           </h2>
-          <WaitlistForm />
+          <p className="text-xl text-zinc-400">
+            Secure your spot as a founding member before we open to the public.
+          </p>
+          <div className="space-y-4">
+            <p className="text-sm text-zinc-500">Only 100 spots available</p>
+            <WaitlistForm />
+          </div>
         </section>
       </main>
     </div>
