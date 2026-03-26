@@ -41,11 +41,15 @@ export default function Products() {
                 description: "Structural and therapeutic biomaterials from fungal networks"
               }
             ].map((product, index) => (
-              <div key={index} className="p-8 border border-zinc-800 rounded-lg hover:border-teal-500 transition-colors">
+              <Link
+                key={index}
+                href={`/products/${product.title.toLowerCase().replace(/ /g, '-').replace(/\+/g, '-')}`}
+                className="p-8 border border-zinc-800 rounded-lg hover:border-teal-500 transition-colors"
+              >
                 <h3 className="text-2xl font-semibold text-zinc-100 mb-2">{product.title}</h3>
                 <p className="text-teal-400 mb-4">{product.subtitle}</p>
                 <p className="text-zinc-400">{product.description}</p>
-              </div>
+              </Link>
             ))}
           </div>
         </section>
