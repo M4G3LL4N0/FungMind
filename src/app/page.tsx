@@ -546,9 +546,8 @@ export default function Home(): JSX.Element {
           </div>
         </div>
       </div>
-    </section>
 
-        {/* Final CTA */}
+      {/* Final CTA */}
         <section className="w-full max-w-4xl text-center space-y-8">
           <h2 className="text-4xl font-bold text-zinc-100">
             Be Among the First
