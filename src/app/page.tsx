@@ -201,9 +201,17 @@ export default function Home() {
           <p className="text-xl text-zinc-400">
             Secure your spot as a founding member before we open to the public.
           </p>
-          <div className="space-y-4">
-            <p className="text-sm text-zinc-500">Only 100 spots available</p>
+          <div className="space-y-4 animate-fade-in">
+            <div className="flex items-center justify-center gap-2">
+              <div className="h-2 w-2 rounded-full bg-teal-500 animate-pulse"></div>
+              <p className="text-sm text-zinc-500">
+                <span className="font-medium text-teal-400">42</span> spots remaining of 100
+              </p>
+            </div>
             <WaitlistForm />
+            <p className="text-xs text-zinc-600">
+              By joining, you'll get early access and exclusive founder pricing
+            </p>
           </div>
         </section>
       </main>
