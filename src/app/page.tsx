@@ -152,14 +152,19 @@ export default function Home() {
         <section className="w-full max-w-4xl space-y-12 mb-32">
           <h2 className="text-4xl font-bold text-zinc-100">Featured Research</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="p-6 border border-zinc-800 rounded-lg hover:border-teal-500 transition-all duration-300">
-              <h3 className="text-2xl font-semibold text-zinc-100 mb-3">Lion's Mane & Neurogenesis</h3>
+            <div className="p-6 border border-zinc-800 rounded-lg hover:border-teal-500 transition-all duration-300 group">
+              <h3 className="text-2xl font-semibold text-zinc-100 mb-3 group-hover:text-teal-400 transition-colors">Lion's Mane & Neurogenesis</h3>
               <p className="text-zinc-400 mb-4">
                 Recent study in the Journal of Neurochemistry shows Hericium erinaceus (Lion's Mane) stimulates NGF production and promotes neurogenesis in the hippocampus.
               </p>
-              <div className="flex items-center text-sm text-teal-400">
-                <span className="mr-2">PMID: 32812264</span>
-                <span>2021 Meta-Analysis</span>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center text-sm text-teal-400">
+                  <span className="mr-2">PMID: 32812264</span>
+                  <span>2021 Meta-Analysis</span>
+                </div>
+                <button className="text-xs px-3 py-1 border border-teal-500 rounded-full hover:bg-teal-500 hover:text-black transition-colors">
+                  Read Study
+                </button>
               </div>
             </div>
             <div className="p-6 border border-zinc-800 rounded-lg hover:border-teal-500 transition-all duration-300">
