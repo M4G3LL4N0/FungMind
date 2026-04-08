@@ -13,7 +13,15 @@ export default function Home() {
             Join the founding circle for exclusive first access to our groundbreaking fungal innovations.
           </p>
           <div className="space-y-4">
-            <p className="text-sm text-zinc-500">Limited to 100 founding members</p>
+            <div className="flex flex-col items-center space-y-2">
+              <div className="text-sm text-zinc-500">
+                Limited to 100 founding members - <span className="countdown text-teal-400">23:59:59</span> remaining
+              </div>
+              <div className="w-full max-w-md bg-zinc-800 rounded-full h-2 overflow-hidden">
+                <div className="progress-bar" style={{ width: `${Math.min(100, (75 / 100) * 100)}%` }}></div>
+              </div>
+              <div className="text-xs text-zinc-500">75/100 spots claimed</div>
+            </div>
             <WaitlistForm />
           </div>
         </section>
@@ -47,14 +55,15 @@ export default function Home() {
         <section className="w-full max-w-4xl space-y-12 mb-32">
           <h2 className="text-4xl font-bold text-zinc-100">Featured Products</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-8 border border-zinc-800 rounded-lg hover:border-teal-500 transition-all duration-300 group hover:shadow-[0_0_30px_rgba(16,185,129,0.1)] relative opacity-100 hover:opacity-100">
+            <div className="p-8 border border-zinc-800 rounded-lg hover:border-teal-500 transition-all duration-300 group hover:shadow-[0_0_30px_rgba(16,185,129,0.1)] relative opacity-100 hover:opacity-100 product-card">
               <div className="absolute top-4 right-4 bg-teal-500 text-black px-3 py-1 rounded-full text-xs font-medium">
                 Featured
               </div>
               <div className="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-medium">
                 Sold Out
               </div>
-              <div className="h-40 bg-gradient-to-br from-zinc-900 to-zinc-800 rounded-md mb-4 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
+              <div className="h-40 bg-gradient-to-br from-zinc-900 to-zinc-800 rounded-md mb-4 flex items-center justify-center group-hover:scale-105 transition-transform duration-300 relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"></div>
                 <span className="text-5xl">🍄</span>
               </div>
               <h3 className="text-2xl font-semibold text-zinc-100 mb-2">NeuroMycelium</h3>
@@ -131,10 +140,11 @@ export default function Home() {
               </div>
             </div>
           </div>
-          <div className="text-center pt-8">
-            <a href="/products" className="inline-flex items-center justify-center px-6 py-3 border border-teal-500 text-teal-500 rounded-lg hover:bg-teal-500 hover:text-black transition-colors duration-300">
-              Explore All Products
+          <div className="text-center pt-8 space-y-4">
+            <a href="/products" className="inline-flex items-center justify-center px-6 py-3 border border-teal-500 text-teal-500 rounded-lg hover:bg-teal-500 hover:text-black transition-colors duration-300 font-semibold">
+              Explore All Products →
             </a>
+            <p className="text-sm text-zinc-500">Discover our full range of fungal-powered solutions</p>
           </div>
         </section>
 

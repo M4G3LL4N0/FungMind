@@ -43,3 +43,22 @@ body {
 .delay-200 {
   animation-delay: 200ms;
 }
+
+.countdown {
+  font-variant-numeric: tabular-nums;
+}
+
+.progress-bar {
+  height: 0.5rem;
+  background: linear-gradient(to right, #10b981, #2dd4bf);
+  transition: width 0.5s ease;
+}
+
+.product-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(16, 185, 129, 0.1);
+}
