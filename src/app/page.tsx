@@ -69,9 +69,15 @@ export default function Home() {
         </section>
 
         {/* Featured Products */}
-        <section className="w-full max-w-4xl space-y-12 mb-32">
-          <h2 className="text-4xl font-bold text-zinc-100">Featured Products</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <section className="w-full max-w-6xl space-y-12 mb-32">
+          <div className="flex items-end justify-between">
+            <h2 className="text-4xl font-bold text-zinc-100">Featured Products</h2>
+            <div className="text-sm text-zinc-500 flex items-center gap-2">
+              <span>Latest Batch:</span>
+              <span className="text-teal-400">FM-2024-04</span>
+            </div>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="p-8 border border-zinc-800 rounded-lg hover:border-teal-500 transition-all duration-300 group hover:shadow-[0_0_30px_rgba(16,185,129,0.1)] relative opacity-100 hover:opacity-100 product-card">
               <div className="absolute top-4 right-4 bg-gradient-to-r from-teal-500 to-emerald-500 text-black px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1">
                 <span>⭐</span> Featured
@@ -147,7 +153,10 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="p-8 border border-zinc-800 rounded-lg opacity-50 cursor-not-allowed">
+            <div className="p-8 border border-zinc-800 rounded-lg opacity-50 cursor-not-allowed relative">
+              <div className="absolute inset-0 flex items-center justify-center">
+                <div className="shimmer w-full h-full"></div>
+              </div>
               <div className="h-40 bg-gradient-to-br from-zinc-900 to-zinc-800 rounded-md mb-4 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
                 <span className="text-5xl">🌿</span>
               </div>
