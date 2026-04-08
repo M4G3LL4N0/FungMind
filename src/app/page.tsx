@@ -366,6 +366,20 @@ export default function Home() {
               <div className="p-4 bg-zinc-900/50 rounded-lg">
                 <div className="text-sm text-zinc-400 mb-1">Next Shipment</div>
                 <div className="text-teal-400 font-medium">April 15, 2024</div>
+                <div className="mt-1 text-xs text-zinc-500">
+                  <span className="text-teal-400">3</span> products incoming
+                </div>
+              </div>
+              <div className="p-4 bg-zinc-900/50 rounded-lg">
+                <div className="text-sm text-zinc-400 mb-1">Product Insights</div>
+                <div className="text-teal-400 font-medium">NeuroMycelium</div>
+                <div className="mt-1 text-xs text-zinc-500">
+                  <span className="text-teal-400">42</span> reviews • 
+                  <span className="text-teal-400">4.8</span> avg rating
+                </div>
+                <div className="mt-1 text-xs text-zinc-500">
+                  <span className="text-teal-400">32</span> units sold this month
+                </div>
               </div>
             </div>
           </div>
