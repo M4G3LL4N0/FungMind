@@ -135,6 +135,33 @@ export default function Home() {
           </div>
         </section>
 
+        {/* Featured Research */}
+        <section className="w-full max-w-4xl space-y-12 mb-32">
+          <h2 className="text-4xl font-bold text-zinc-100">Featured Research</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="p-6 border border-zinc-800 rounded-lg hover:border-teal-500 transition-all duration-300">
+              <h3 className="text-2xl font-semibold text-zinc-100 mb-3">Lion's Mane & Neurogenesis</h3>
+              <p className="text-zinc-400 mb-4">
+                Recent study in the Journal of Neurochemistry shows Hericium erinaceus (Lion's Mane) stimulates NGF production and promotes neurogenesis in the hippocampus.
+              </p>
+              <div className="flex items-center text-sm text-teal-400">
+                <span className="mr-2">PMID: 32812264</span>
+                <span>2021 Meta-Analysis</span>
+              </div>
+            </div>
+            <div className="p-6 border border-zinc-800 rounded-lg hover:border-teal-500 transition-all duration-300">
+              <h3 className="text-2xl font-semibold text-zinc-100 mb-3">Cordyceps & VO2 Max</h3>
+              <p className="text-zinc-400 mb-4">
+                Clinical trial demonstrates Cordyceps militaris supplementation increases VO2 max by 11% and reduces fatigue in endurance athletes.
+              </p>
+              <div className="flex items-center text-sm text-teal-400">
+                <span className="mr-2">PMID: 33533395</span>
+                <span>2022 RCT</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Why Now */}
         <section className="w-full max-w-4xl space-y-12 mb-32">
           <h2 className="text-4xl font-bold text-zinc-100">Why Now?</h2>
