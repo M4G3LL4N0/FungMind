@@ -404,8 +404,23 @@ export default function Home() {
                     />
                   </div>
                 </div>
-                <div className="mt-2 text-xs text-zinc-500">
-                  Next restock: <span className="text-teal-400">April 12</span>
+                <div className="mt-2 flex items-center justify-between">
+                  <div className="text-xs text-zinc-500">
+                    Next restock: <span className="text-teal-400">April 12</span>
+                  </div>
+                  <button className="text-xs px-2 py-0.5 bg-teal-900/20 text-teal-400 rounded hover:bg-teal-500 hover:text-black transition-colors">
+                    Manage
+                  </button>
+                </div>
+                <div className="mt-2 grid grid-cols-2 gap-2">
+                  <div className="text-xs bg-zinc-800/50 px-2 py-1 rounded">
+                    <div className="text-zinc-400">Batch Quality</div>
+                    <div className="text-teal-400">98.7%</div>
+                  </div>
+                  <div className="text-xs bg-zinc-800/50 px-2 py-1 rounded">
+                    <div className="text-zinc-400">Returns</div>
+                    <div className="text-teal-400">0.8%</div>
+                  </div>
                 </div>
               </div>
             </div>

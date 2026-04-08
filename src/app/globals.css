@@ -158,6 +158,40 @@ body {
   gap: 0.25rem;
 }
 
+.product-card .compound-details {
+  font-size: 0.7rem;
+  color: rgba(156, 163, 175, 0.8);
+  margin-top: 0.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.5rem;
+}
+
+.product-card .compound-detail {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.product-card .compound-detail .indicator {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background-color: rgba(16, 185, 129, 0.5);
+}
+
+.product-card .inventory-alert {
+  font-size: 0.7rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  background: rgba(220, 38, 38, 0.1);
+  color: rgba(220, 38, 38, 0.8);
+  margin-top: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
 .product-card:hover {
   transform: translateY(-4px) scale(1.02);
   box-shadow: 0 20px 40px rgba(16, 185, 129, 0.25);
