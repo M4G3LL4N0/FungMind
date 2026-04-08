@@ -355,19 +355,32 @@ export default function Home() {
           <div className="border border-zinc-800 rounded-lg p-6">
             <h3 className="text-xl font-semibold text-zinc-100 mb-4">Your Access</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              <div className="p-4 bg-zinc-900/50 rounded-lg">
+              <div className="p-4 bg-zinc-900/50 rounded-lg border border-zinc-800 hover:border-teal-500 transition-colors">
                 <div className="text-sm text-zinc-400 mb-1">Founder Status</div>
-                <div className="text-teal-400 font-medium">Active</div>
+                <div className="text-teal-400 font-medium flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></span>
+                  Active
+                </div>
+                <div className="mt-2 text-xs text-zinc-500">
+                  Since: <span className="text-teal-400">Mar 15, 2024</span>
+                </div>
               </div>
-              <div className="p-4 bg-zinc-900/50 rounded-lg">
+              <div className="p-4 bg-zinc-900/50 rounded-lg border border-zinc-800 hover:border-teal-500 transition-colors">
                 <div className="text-sm text-zinc-400 mb-1">Priority Access</div>
                 <div className="text-teal-400 font-medium">Tier 1</div>
+                <div className="mt-2 text-xs text-zinc-500">
+                  Benefits: <span className="text-teal-400">Early Access + Discounts</span>
+                </div>
               </div>
-              <div className="p-4 bg-zinc-900/50 rounded-lg">
+              <div className="p-4 bg-zinc-900/50 rounded-lg border border-zinc-800 hover:border-teal-500 transition-colors">
                 <div className="text-sm text-zinc-400 mb-1">Next Shipment</div>
                 <div className="text-teal-400 font-medium">April 15, 2024</div>
                 <div className="mt-1 text-xs text-zinc-500">
                   <span className="text-teal-400">3</span> products incoming
+                </div>
+                <div className="mt-1 text-xs">
+                  <span className="text-zinc-500">Tracking: </span>
+                  <span className="text-teal-400">FM-2024-03-42</span>
                 </div>
                 <div className="mt-2">
                   <div className="flex justify-between text-xs text-zinc-500 mb-1">
@@ -382,9 +395,16 @@ export default function Home() {
                   </div>
                 </div>
               </div>
-              <div className="p-4 bg-zinc-900/50 rounded-lg">
-                <div className="text-sm text-zinc-400 mb-1">Product Insights</div>
-                <div className="text-teal-400 font-medium">NeuroMycelium</div>
+              <div className="p-4 bg-zinc-900/50 rounded-lg border border-zinc-800 hover:border-teal-500 transition-colors group">
+                <div className="flex justify-between items-start">
+                  <div>
+                    <div className="text-sm text-zinc-400 mb-1">Product Insights</div>
+                    <div className="text-teal-400 font-medium">NeuroMycelium</div>
+                  </div>
+                  <button className="text-xs px-2 py-1 bg-teal-900/20 text-teal-400 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+                    View All
+                  </button>
+                </div>
                 <div className="mt-1 text-xs text-zinc-500">
                   <span className="text-teal-400">42</span> reviews • 
                   <span className="text-teal-400">4.8</span> avg rating
