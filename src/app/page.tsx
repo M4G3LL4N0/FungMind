@@ -434,6 +434,16 @@ export default function Home() {
                       style={{ width: `75%` }}
                     />
                   </div>
+                  <div className="mt-2 grid grid-cols-2 gap-2">
+                    <div className="text-xs bg-zinc-800/50 px-2 py-1 rounded">
+                      <div className="text-zinc-400">On Time</div>
+                      <div className="text-teal-400">95%</div>
+                    </div>
+                    <div className="text-xs bg-zinc-800/50 px-2 py-1 rounded">
+                      <div className="text-zinc-400">Damages</div>
+                      <div className="text-teal-400">0.5%</div>
+                    </div>
+                  </div>
                 </div>
               </div>
               <div className="p-4 bg-zinc-900/50 rounded-lg border border-zinc-800 hover:border-teal-500 transition-colors group">
@@ -484,6 +494,16 @@ export default function Home() {
                     Batch: <span className="text-teal-400">FM-2024-03</span>
                   </div>
                 </div>
+                <div className="mt-2 grid grid-cols-2 gap-2">
+                  <div className="text-xs bg-zinc-800/50 px-2 py-1 rounded">
+                    <div className="text-zinc-400">Yield</div>
+                    <div className="text-teal-400">92.5%</div>
+                  </div>
+                  <div className="text-xs bg-zinc-800/50 px-2 py-1 rounded">
+                    <div className="text-zinc-400">Contamination</div>
+                    <div className="text-teal-400">0.1%</div>
+                  </div>
+                </div>
                 <div className="mt-3">
                   <div className="text-xs text-zinc-400 mb-1">Key Metrics</div>
                   <div className="grid grid-cols-3 gap-2">
@@ -503,6 +523,22 @@ export default function Home() {
                       <div className="text-[0.6rem] text-zinc-500 mt-0.5">+8 MoM</div>
                     </div>
                   </div>
+                  <div className="mt-2 grid grid-cols-2 gap-2">
+                    <div className="text-xs bg-zinc-800/50 px-2 py-1 rounded">
+                      <div className="text-zinc-400">Batch Purity</div>
+                      <div className="text-teal-400">98.7%</div>
+                    </div>
+                    <div className="text-xs bg-zinc-800/50 px-2 py-1 rounded">
+                      <div className="text-zinc-400">Potency</div>
+                      <div className="text-teal-400">102.3%</div>
+                    </div>
+                  </div>
+                  <div className="mt-2 text-xs text-zinc-500">
+                    <span className="text-teal-400">Last tested:</span> 2024-04-05
+                    <span className="mx-2">|</span>
+                    <span className="text-teal-400">Next test:</span> 2024-05-01
+                  </div>
+                </div>
                   <div className="mt-2 grid grid-cols-2 gap-2">
                     <div className="text-xs bg-zinc-800/50 px-2 py-1 rounded">
                       <div className="text-zinc-400">Batch Purity</div>
