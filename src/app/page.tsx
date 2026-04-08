@@ -222,8 +222,23 @@ export default function Home() {
                     </li>
                   </ul>
                 </div>
-                <div className="text-xs text-zinc-500">
-                  <p>Batch tested for purity and potency. Vegan, non-GMO, gluten-free.</p>
+                <div className="text-xs text-zinc-500 space-y-1">
+                  <p className="flex items-center gap-1">
+                    <span>🔬</span>
+                    <span>Batch tested for purity and potency (HPLC, LC-MS)</span>
+                  </p>
+                  <p className="flex items-center gap-1">
+                    <span>🌱</span>
+                    <span>Vegan, non-GMO, gluten-free</span>
+                  </p>
+                  <p className="flex items-center gap-1">
+                    <span>🏭</span>
+                    <span>GMP certified facility</span>
+                  </p>
+                  <p className="flex items-center gap-1">
+                    <span>📊</span>
+                    <span>Full COA available for members</span>
+                  </p>
                 </div>
               </div>
               <div className="flex flex-wrap gap-2 mb-4">
