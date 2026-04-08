@@ -1,7 +1,12 @@
 
 import Link from 'next/link';
+import { Product } from '@/types';
 
-export default function Products() {
+interface ProductsPageProps {
+  products: Product[];
+}
+
+export default function Products({ products }: ProductsPageProps) {
   return (
     <div className="flex flex-col flex-1 items-center justify-center font-sans bg-black">
       <main className="flex flex-1 w-full max-w-6xl flex-col items-center justify-between py-32 px-8">
