@@ -89,9 +89,10 @@ export default function Home() {
                   <span>⭐</span> Featured
                   <span className="ml-1">v2.1</span>
                 </div>
-                <div className="flex items-center gap-1">
+                <div className="flex items-center gap-1 bg-zinc-900/80 px-2 py-1 rounded-full">
                   <div className="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></div>
                   <span className="text-xs text-teal-400">In Stock</span>
+                  <span className="text-xs text-zinc-400 ml-1">• 32 units</span>
                 </div>
               </div>
               <div className="absolute top-4 left-4 flex flex-col gap-2">
@@ -112,7 +113,8 @@ export default function Home() {
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black/80 to-transparent"></div>
               </div>
-              <h3 className="text-2xl font-semibold text-zinc-100 mb-2">NeuroMycelium</h3>
+              <h3 className="text-2xl font-semibold text-zinc-100 mb-0">NeuroMycelium</h3>
+              <div className="scientific-name">Hericium erinaceus • 2:1 extract</div>
               <div className="flex items-center gap-2 mb-2">
                 <div className="flex text-teal-400">
                   {[...Array(5)].map((_, i) => (
@@ -193,9 +195,10 @@ export default function Home() {
                   <span className="text-teal-400">32</span>/50 remaining
                 </div>
               </div>
-              <div className="mt-2 text-xs text-teal-400 flex items-center gap-1">
+              <div className="mt-2 text-xs text-teal-400 flex items-center gap-1 bg-teal-900/20 px-2 py-1 rounded-full">
                 <span>⏳</span>
                 <span>Founder's Price - Limited Time</span>
+                <span className="ml-1 text-zinc-400">(expires in 3d)</span>
               </div>
             </div>
 
