@@ -84,6 +84,28 @@ export default function Home() {
               <p className="text-zinc-400 mb-4">
                 Advanced Lion's Mane extract enhanced with nootropics for improved memory, focus, and neuroplasticity. Clinically studied for cognitive enhancement.
               </p>
+              <div className="product-details">
+                <div className="mb-4">
+                  <h4 className="text-sm font-medium text-zinc-300 mb-2">Key Benefits:</h4>
+                  <ul className="text-xs text-zinc-400 space-y-1">
+                    <li className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-teal-400"></span>
+                      <span>+27% memory recall in clinical trials</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-teal-400"></span>
+                      <span>Supports neurogenesis and BDNF production</span>
+                    </li>
+                    <li className="flex items-center gap-2">
+                      <span className="w-2 h-2 rounded-full bg-teal-400"></span>
+                      <span>Delayed release formula for 12-hour efficacy</span>
+                    </li>
+                  </ul>
+                </div>
+                <div className="text-xs text-zinc-500">
+                  <p>Batch tested for purity and potency. Vegan, non-GMO, gluten-free.</p>
+                </div>
+              </div>
               <div className="flex flex-wrap gap-2 mb-4">
                 <span className="px-2 py-1 bg-zinc-800 text-teal-400 text-xs rounded-full">Memory</span>
                 <span className="px-2 py-1 bg-zinc-800 text-teal-400 text-xs rounded-full">Focus</span>
