@@ -79,7 +79,7 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div 
-              className="p-8 border border-zinc-800 rounded-lg hover:border-teal-500 transition-all duration-300 group hover:shadow-[0_0_30px_rgba(16,185,129,0.1)] relative opacity-100 hover:opacity-100 product-card"
+              className="p-8 border border-zinc-800 rounded-lg hover:border-teal-500 transition-all duration-300 group hover:shadow-[0_0_30px_rgba(16,185,129,0.1)] relative opacity-100 hover:opacity-100 product-card loading"
               data-product="neuro-mycelium"
               data-version="2.1"
               data-testid="product-card"
@@ -93,6 +93,9 @@ export default function Home() {
                   <div className="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></div>
                   <span className="text-xs text-teal-400">In Stock</span>
                   <span className="text-xs text-zinc-400 ml-1">• 32 units</span>
+                  <div className="ml-2 text-xs bg-zinc-800 text-zinc-400 px-2 py-0.5 rounded-full">
+                    <span className="text-teal-400">+12</span> incoming
+                  </div>
                 </div>
               </div>
               <div className="absolute top-4 left-4 flex flex-col gap-2">
