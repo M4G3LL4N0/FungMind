@@ -125,10 +125,14 @@ export default function Home() {
               </div>
               <div className="h-40 bg-gradient-to-br from-zinc-900 to-zinc-800 rounded-md mb-4 flex items-center justify-center group-hover:scale-105 transition-transform duration-300 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"></div>
-                <div className="relative z-10 text-center p-4">
+                <div className="relative z-10 text-center p-4 w-full">
                   <span className="text-5xl">🍄</span>
                   <div className="mt-2 text-xs bg-black/50 px-2 py-1 rounded text-zinc-300 inline-block">
                     Neurotropic Formula v2.1
+                  </div>
+                  <div className="absolute bottom-2 left-2 right-2 flex justify-between text-xs text-zinc-400">
+                    <span>Lot: FM-2024-03</span>
+                    <span>Exp: 2025-06</span>
                   </div>
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black/80 to-transparent"></div>
@@ -201,6 +205,10 @@ export default function Home() {
                 <div className="ml-2 text-xs bg-teal-900/30 text-teal-400 px-2 py-0.5 rounded-full">
                   Save 17%
                 </div>
+              </div>
+              <div className="mt-1 text-xs text-zinc-500 flex items-center gap-1">
+                <span>🔬</span>
+                <span>Third-party tested</span>
               </div>
               <div className="mt-2">
                 <div className="flex justify-between text-xs text-zinc-500 mb-1">
@@ -330,6 +338,28 @@ export default function Home() {
             <p className="text-zinc-400">
               FungMind is positioned at the forefront of this revolution, leveraging cutting-edge science to unlock fungi's full potential.
             </p>
+          </div>
+        </section>
+
+        {/* Member Dashboard */}
+        <section className="w-full max-w-4xl space-y-8 mb-32">
+          <h2 className="text-4xl font-bold text-zinc-100">Founder Dashboard</h2>
+          <div className="border border-zinc-800 rounded-lg p-6">
+            <h3 className="text-xl font-semibold text-zinc-100 mb-4">Your Access</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="p-4 bg-zinc-900/50 rounded-lg">
+                <div className="text-sm text-zinc-400 mb-1">Founder Status</div>
+                <div className="text-teal-400 font-medium">Active</div>
+              </div>
+              <div className="p-4 bg-zinc-900/50 rounded-lg">
+                <div className="text-sm text-zinc-400 mb-1">Priority Access</div>
+                <div className="text-teal-400 font-medium">Tier 1</div>
+              </div>
+              <div className="p-4 bg-zinc-900/50 rounded-lg">
+                <div className="text-sm text-zinc-400 mb-1">Next Shipment</div>
+                <div className="text-teal-400 font-medium">April 15, 2024</div>
+              </div>
+            </div>
           </div>
         </section>
 
