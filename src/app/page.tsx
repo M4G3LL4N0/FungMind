@@ -47,7 +47,7 @@ export default function Home() {
         <section className="w-full max-w-4xl space-y-12 mb-32">
           <h2 className="text-4xl font-bold text-zinc-100">Product Lines</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="p-8 border border-zinc-800 rounded-lg">
+            <div className="p-8 border border-zinc-800 rounded-lg hover:border-teal-500 transition-all duration-300">
               <h3 className="text-2xl font-semibold text-zinc-100 mb-4">Therapeutic Compounds</h3>
               <p className="text-zinc-400">
                 Novel fungal-derived molecules for targeted therapies
