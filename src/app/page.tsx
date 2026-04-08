@@ -14,13 +14,30 @@ export default function Home() {
           </p>
           <div className="space-y-4">
             <div className="flex flex-col items-center space-y-2">
-              <div className="text-sm text-zinc-500">
-                Limited to 100 founding members - <span className="countdown text-teal-400">23:59:59</span> remaining
+              <div className="flex items-center justify-center gap-2">
+                <div className="text-sm text-zinc-500">
+                  Limited to 100 founding members - <span className="countdown text-teal-400">23:59:59</span> remaining
+                </div>
+                <div className="text-xs px-2 py-0.5 bg-teal-900/50 text-teal-400 rounded-full">
+                  Early Access
+                </div>
               </div>
-              <div className="w-full max-w-md bg-zinc-800 rounded-full h-2 overflow-hidden">
-                <div className="progress-bar" style={{ width: `${Math.min(100, (75 / 100) * 100)}%` }}></div>
+              <div className="w-full max-w-md">
+                <div className="flex justify-between text-xs text-zinc-500 mb-1">
+                  <span>0</span>
+                  <span>50</span>
+                  <span>100</span>
+                </div>
+                <div className="bg-zinc-800 rounded-full h-2 overflow-hidden">
+                  <div 
+                    className="progress-bar h-full" 
+                    style={{ width: `${Math.min(100, (75 / 100) * 100)}%` }}
+                  ></div>
+                </div>
+                <div className="text-xs text-zinc-500 mt-1 text-right">
+                  <span className="text-teal-400">75</span>/100 spots claimed
+                </div>
               </div>
-              <div className="text-xs text-zinc-500">75/100 spots claimed</div>
             </div>
             <WaitlistForm />
           </div>
@@ -56,8 +73,9 @@ export default function Home() {
           <h2 className="text-4xl font-bold text-zinc-100">Featured Products</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="p-8 border border-zinc-800 rounded-lg hover:border-teal-500 transition-all duration-300 group hover:shadow-[0_0_30px_rgba(16,185,129,0.1)] relative opacity-100 hover:opacity-100 product-card">
-              <div className="absolute top-4 right-4 bg-teal-500 text-black px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1">
+              <div className="absolute top-4 right-4 bg-gradient-to-r from-teal-500 to-emerald-500 text-black px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1">
                 <span>⭐</span> Featured
+                <span className="ml-1">v2.1</span>
               </div>
               <div className="absolute top-4 left-4 bg-red-500/90 text-white px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1">
                 <span>⏳</span> Waitlist Only
@@ -80,6 +98,9 @@ export default function Home() {
                   ))}
                 </div>
                 <span className="text-sm text-zinc-500">(4.8/5)</span>
+                <span className="text-xs bg-zinc-800 text-teal-400 px-2 py-0.5 rounded-full">
+                  42 reviews
+                </span>
               </div>
               <p className="text-zinc-400 mb-4">
                 Advanced Lion's Mane extract enhanced with nootropics for improved memory, focus, and neuroplasticity. Clinically studied for cognitive enhancement.
@@ -116,9 +137,13 @@ export default function Home() {
                   $49.99 <span className="text-sm text-zinc-500">/ month</span>
                 </div>
                 <div className="text-xs text-zinc-500 line-through">$59.99</div>
+                <div className="ml-2 text-xs bg-teal-900/30 text-teal-400 px-2 py-0.5 rounded-full">
+                  Save 17%
+                </div>
               </div>
-              <div className="mt-2 text-xs text-teal-400">
-                Founder's Price (Save 17%)
+              <div className="mt-2 text-xs text-teal-400 flex items-center gap-1">
+                <span>⏳</span>
+                <span>Founder's Price - Limited Time</span>
               </div>
             </div>
 
