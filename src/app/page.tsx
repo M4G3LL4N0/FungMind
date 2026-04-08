@@ -354,7 +354,7 @@ export default function Home() {
           <h2 className="text-4xl font-bold text-zinc-100">Founder Dashboard</h2>
           <div className="border border-zinc-800 rounded-lg p-6">
             <h3 className="text-xl font-semibold text-zinc-100 mb-4">Your Access</h3>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
               <div className="p-4 bg-zinc-900/50 rounded-lg">
                 <div className="text-sm text-zinc-400 mb-1">Founder Status</div>
                 <div className="text-teal-400 font-medium">Active</div>
@@ -369,6 +369,18 @@ export default function Home() {
                 <div className="mt-1 text-xs text-zinc-500">
                   <span className="text-teal-400">3</span> products incoming
                 </div>
+                <div className="mt-2">
+                  <div className="flex justify-between text-xs text-zinc-500 mb-1">
+                    <span>Shipment Progress</span>
+                    <span className="text-teal-400">75%</span>
+                  </div>
+                  <div className="h-1.5 bg-zinc-800 rounded-full overflow-hidden">
+                    <div 
+                      className="h-full bg-gradient-to-r from-teal-500 to-emerald-500" 
+                      style={{ width: `75%` }}
+                    />
+                  </div>
+                </div>
               </div>
               <div className="p-4 bg-zinc-900/50 rounded-lg">
                 <div className="text-sm text-zinc-400 mb-1">Product Insights</div>
@@ -379,6 +391,21 @@ export default function Home() {
                 </div>
                 <div className="mt-1 text-xs text-zinc-500">
                   <span className="text-teal-400">32</span> units sold this month
+                </div>
+                <div className="mt-2">
+                  <div className="flex justify-between text-xs text-zinc-500 mb-1">
+                    <span>Inventory</span>
+                    <span className="text-teal-400">32/50</span>
+                  </div>
+                  <div className="h-1.5 bg-zinc-800 rounded-full overflow-hidden">
+                    <div 
+                      className="h-full bg-gradient-to-r from-teal-500 to-emerald-500" 
+                      style={{ width: `${Math.min(100, (32 / 50) * 100)}%` }}
+                    />
+                  </div>
+                </div>
+                <div className="mt-2 text-xs text-zinc-500">
+                  Next restock: <span className="text-teal-400">April 12</span>
                 </div>
               </div>
             </div>
