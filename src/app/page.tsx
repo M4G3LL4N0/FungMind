@@ -47,9 +47,12 @@ export default function Home() {
         <section className="w-full max-w-4xl space-y-12 mb-32">
           <h2 className="text-4xl font-bold text-zinc-100">Featured Products</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="p-8 border border-zinc-800 rounded-lg hover:border-teal-500 transition-all duration-300 group hover:shadow-[0_0_30px_rgba(16,185,129,0.1)] relative">
+            <div className="p-8 border border-zinc-800 rounded-lg hover:border-teal-500 transition-all duration-300 group hover:shadow-[0_0_30px_rgba(16,185,129,0.1)] relative opacity-100 hover:opacity-100">
               <div className="absolute top-4 right-4 bg-teal-500 text-black px-3 py-1 rounded-full text-xs font-medium">
                 Featured
+              </div>
+              <div className="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-medium">
+                Sold Out
               </div>
               <div className="h-40 bg-gradient-to-br from-zinc-900 to-zinc-800 rounded-md mb-4 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
                 <span className="text-5xl">🍄</span>
@@ -76,7 +79,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="p-8 border border-zinc-800 rounded-lg hover:border-teal-500 transition-all duration-300 group hover:shadow-[0_0_30px_rgba(16,185,129,0.1)]">
+            <div className="p-8 border border-zinc-800 rounded-lg opacity-50 cursor-not-allowed">
               <div className="h-40 bg-gradient-to-br from-zinc-900 to-zinc-800 rounded-md mb-4 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
                 <span className="text-5xl">🌿</span>
               </div>
@@ -102,7 +105,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="p-8 border border-zinc-800 rounded-lg hover:border-teal-500 transition-all duration-300 group hover:shadow-[0_0_30px_rgba(16,185,129,0.1)]">
+            <div className="p-8 border border-zinc-800 rounded-lg opacity-50 cursor-not-allowed">
               <div className="h-40 bg-gradient-to-br from-zinc-900 to-zinc-800 rounded-md mb-4 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
                 <span className="text-5xl">🧠</span>
               </div>
