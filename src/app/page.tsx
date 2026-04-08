@@ -56,15 +56,21 @@ export default function Home() {
           <h2 className="text-4xl font-bold text-zinc-100">Featured Products</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="p-8 border border-zinc-800 rounded-lg hover:border-teal-500 transition-all duration-300 group hover:shadow-[0_0_30px_rgba(16,185,129,0.1)] relative opacity-100 hover:opacity-100 product-card">
-              <div className="absolute top-4 right-4 bg-teal-500 text-black px-3 py-1 rounded-full text-xs font-medium">
-                Featured
+              <div className="absolute top-4 right-4 bg-teal-500 text-black px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1">
+                <span>⭐</span> Featured
               </div>
-              <div className="absolute top-4 left-4 bg-red-500 text-white px-3 py-1 rounded-full text-xs font-medium">
-                Sold Out
+              <div className="absolute top-4 left-4 bg-red-500/90 text-white px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1">
+                <span>⏳</span> Waitlist Only
+              </div>
+              <div className="absolute bottom-4 right-4 text-xs text-zinc-500">
+                Batch #FM-2024-03
               </div>
               <div className="h-40 bg-gradient-to-br from-zinc-900 to-zinc-800 rounded-md mb-4 flex items-center justify-center group-hover:scale-105 transition-transform duration-300 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"></div>
                 <span className="text-5xl">🍄</span>
+                <div className="absolute bottom-2 left-2 text-xs bg-black/50 px-2 py-1 rounded text-zinc-300">
+                  Neurotropic Formula v2.1
+                </div>
               </div>
               <h3 className="text-2xl font-semibold text-zinc-100 mb-2">NeuroMycelium</h3>
               <div className="flex items-center gap-2 mb-2">
@@ -83,8 +89,14 @@ export default function Home() {
                 <span className="px-2 py-1 bg-zinc-800 text-teal-400 text-xs rounded-full">Focus</span>
                 <span className="px-2 py-1 bg-zinc-800 text-teal-400 text-xs rounded-full">Neuroprotection</span>
               </div>
-              <div className="text-xl font-semibold text-teal-400">
-                $49.99 <span className="text-sm text-zinc-500">/ month</span>
+              <div className="flex items-baseline gap-2">
+                <div className="text-xl font-semibold text-teal-400">
+                  $49.99 <span className="text-sm text-zinc-500">/ month</span>
+                </div>
+                <div className="text-xs text-zinc-500 line-through">$59.99</div>
+              </div>
+              <div className="mt-2 text-xs text-teal-400">
+                Founder's Price (Save 17%)
               </div>
             </div>
 
