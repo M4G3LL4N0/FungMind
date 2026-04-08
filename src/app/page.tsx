@@ -84,15 +84,23 @@ export default function Home() {
               data-version="2.1"
               data-testid="product-card"
             >
-              <div className="absolute top-4 right-4 bg-gradient-to-r from-teal-500 to-emerald-500 text-black px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1">
-                <span>⭐</span> Featured
-                <span className="ml-1">v2.1</span>
+              <div className="absolute top-4 right-4 flex flex-col gap-2 items-end">
+                <div className="bg-gradient-to-r from-teal-500 to-emerald-500 text-black px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1">
+                  <span>⭐</span> Featured
+                  <span className="ml-1">v2.1</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <div className="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></div>
+                  <span className="text-xs text-teal-400">In Stock</span>
+                </div>
               </div>
-              <div className="absolute top-4 left-4 bg-red-500/90 text-white px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1">
-                <span>⏳</span> Waitlist Only
-              </div>
-              <div className="absolute bottom-4 right-4 text-xs text-zinc-500">
-                Batch #FM-2024-03
+              <div className="absolute top-4 left-4 flex flex-col gap-2">
+                <div className="bg-red-500/90 text-white px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1">
+                  <span>⏳</span> Waitlist Only
+                </div>
+                <div className="text-xs bg-zinc-800/80 text-zinc-300 px-2 py-1 rounded-full">
+                  Batch #FM-2024-03
+                </div>
               </div>
               <div className="h-40 bg-gradient-to-br from-zinc-900 to-zinc-800 rounded-md mb-4 flex items-center justify-center group-hover:scale-105 transition-transform duration-300 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"></div>
@@ -167,6 +175,22 @@ export default function Home() {
                 <div className="text-xs text-zinc-500 line-through">$59.99</div>
                 <div className="ml-2 text-xs bg-teal-900/30 text-teal-400 px-2 py-0.5 rounded-full">
                   Save 17%
+                </div>
+              </div>
+              <div className="mt-2">
+                <div className="flex justify-between text-xs text-zinc-500 mb-1">
+                  <span>0</span>
+                  <span>25</span>
+                  <span>50</span>
+                </div>
+                <div className="bg-zinc-800 rounded-full h-1.5 overflow-hidden">
+                  <div 
+                    className="progress-bar h-full" 
+                    style={{ width: `${Math.min(100, (32 / 50) * 100)}%` }}
+                  ></div>
+                </div>
+                <div className="text-xs text-zinc-500 mt-1 text-right">
+                  <span className="text-teal-400">32</span>/50 remaining
                 </div>
               </div>
               <div className="mt-2 text-xs text-teal-400 flex items-center gap-1">

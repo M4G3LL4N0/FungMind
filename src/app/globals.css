@@ -82,6 +82,33 @@ body {
   transition: width 0.5s ease;
 }
 
+.inventory-bar {
+  height: 0.25rem;
+  background: linear-gradient(to right, #10b981, #2dd4bf);
+  transition: width 0.5s ease;
+}
+
+.status-indicator {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.status-indicator.in-stock {
+  background-color: #10b981;
+  animation: pulse 2s infinite;
+}
+
+.status-indicator.low-stock {
+  background-color: #f59e0b;
+  animation: pulse 1.5s infinite;
+}
+
+.status-indicator.out-of-stock {
+  background-color: #ef4444;
+}
+
 .product-card {
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
