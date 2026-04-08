@@ -91,10 +91,13 @@ export default function Home() {
               </div>
               <div className="h-40 bg-gradient-to-br from-zinc-900 to-zinc-800 rounded-md mb-4 flex items-center justify-center group-hover:scale-105 transition-transform duration-300 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"></div>
-                <span className="text-5xl">🍄</span>
-                <div className="absolute bottom-2 left-2 text-xs bg-black/50 px-2 py-1 rounded text-zinc-300">
-                  Neurotropic Formula v2.1
+                <div className="relative z-10 text-center p-4">
+                  <span className="text-5xl">🍄</span>
+                  <div className="mt-2 text-xs bg-black/50 px-2 py-1 rounded text-zinc-300 inline-block">
+                    Neurotropic Formula v2.1
+                  </div>
                 </div>
+                <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black/80 to-transparent"></div>
               </div>
               <h3 className="text-2xl font-semibold text-zinc-100 mb-2">NeuroMycelium</h3>
               <div className="flex items-center gap-2 mb-2">
@@ -109,8 +112,22 @@ export default function Home() {
                 </span>
               </div>
               <p className="text-zinc-400 mb-4">
-                Advanced Lion's Mane extract enhanced with nootropics for improved memory, focus, and neuroplasticity. Clinically studied for cognitive enhancement.
+                Our flagship neurotropic formula combines <span className="text-teal-400">Lion's Mane (Hericium erinaceus)</span> with synergistic nootropics to support:
               </p>
+              <ul className="text-sm text-zinc-400 space-y-2 mb-4">
+                <li className="flex items-start gap-2">
+                  <span className="text-teal-400 mt-0.5">✓</span>
+                  <span>Memory formation & recall</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-teal-400 mt-0.5">✓</span>
+                  <span>Neuroplasticity & BDNF production</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-teal-400 mt-0.5">✓</span>
+                  <span>Sustained focus without jitters</span>
+                </li>
+              </ul>
               <div className="product-details">
                 <div className="mb-4">
                   <h4 className="text-sm font-medium text-zinc-300 mb-2">Key Benefits:</h4>

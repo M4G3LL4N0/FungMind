@@ -93,6 +93,7 @@ body {
   transform: translateY(-4px);
   box-shadow: 0 10px 30px rgba(16, 185, 129, 0.15);
   border-color: rgba(16, 185, 129, 0.5);
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(16, 185, 129, 0.03));
 }
 
 .product-card .product-details {
