@@ -147,8 +147,26 @@ export default function Home() {
               </div>
               <h3 className="text-2xl font-semibold text-zinc-100 mb-0">NeuroMycelium</h3>
               <div className="scientific-name">
-                <span className="font-medium">Hericium erinaceus</span> • 2:1 extract • 
-                <span className="ml-1 text-teal-400">Standardized 30% polysaccharides</span>
+                <div className="flex items-center gap-2">
+                  <span className="font-medium">Hericium erinaceus</span>
+                  <span className="text-xs bg-zinc-800 text-teal-400 px-1.5 py-0.5 rounded-full">
+                    FM-2024-03
+                  </span>
+                </div>
+                <div className="flex flex-wrap items-center gap-x-2 gap-y-1 mt-1">
+                  <span className="text-xs bg-zinc-800/50 text-teal-400 px-2 py-0.5 rounded-full flex items-center gap-1">
+                    <span>2:1 extract</span>
+                  </span>
+                  <span className="text-xs bg-zinc-800/50 text-teal-400 px-2 py-0.5 rounded-full flex items-center gap-1">
+                    <span>30% β-glucans</span>
+                  </span>
+                  <span className="text-xs bg-zinc-800/50 text-teal-400 px-2 py-0.5 rounded-full flex items-center gap-1">
+                    <span>0.8% erinacines</span>
+                  </span>
+                  <span className="text-xs bg-zinc-800/50 text-teal-400 px-2 py-0.5 rounded-full flex items-center gap-1">
+                    <span>HPLC verified</span>
+                  </span>
+                </div>
               </div>
               <div className="flex items-center gap-2 mb-2">
                 <div className="flex text-teal-400">
@@ -445,15 +463,25 @@ export default function Home() {
                 </div>
                 <div className="mt-3">
                   <div className="text-xs text-zinc-400 mb-1">Key Metrics</div>
-                  <div className="grid grid-cols-2 gap-2">
+                  <div className="grid grid-cols-3 gap-2">
                     <div className="text-xs bg-zinc-800/50 px-2 py-1 rounded">
-                      <div className="text-zinc-400">Customer LTV</div>
+                      <div className="text-zinc-400">LTV</div>
                       <div className="text-teal-400">$1,200</div>
+                      <div className="text-[0.6rem] text-zinc-500 mt-0.5">+12% MoM</div>
                     </div>
                     <div className="text-xs bg-zinc-800/50 px-2 py-1 rounded">
-                      <div className="text-zinc-400">Churn Rate</div>
+                      <div className="text-zinc-400">Churn</div>
                       <div className="text-teal-400">2.1%</div>
+                      <div className="text-[0.6rem] text-zinc-500 mt-0.5">-0.3% MoM</div>
                     </div>
+                    <div className="text-xs bg-zinc-800/50 px-2 py-1 rounded">
+                      <div className="text-zinc-400">NPS</div>
+                      <div className="text-teal-400">72</div>
+                      <div className="text-[0.6rem] text-zinc-500 mt-0.5">+8 MoM</div>
+                    </div>
+                  </div>
+                  <div className="mt-2 text-xs text-zinc-500">
+                    <span className="text-teal-400">Last updated:</span> 2 hours ago
                   </div>
                 </div>
               </div>

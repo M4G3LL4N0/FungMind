@@ -191,8 +191,25 @@ body {
   color: rgba(156, 163, 175, 0.8);
   margin-top: 0.5rem;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 0.5rem;
+}
+
+.product-card .compound-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.product-card .compound-detail .label {
+  font-size: 0.6rem;
+  color: rgba(16, 185, 129, 0.6);
+}
+
+.product-card .compound-detail .value {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .product-card .compound-detail {
