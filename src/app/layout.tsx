@@ -17,6 +17,23 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "FungMind | Fungi-Powered Biotech",
   description: "Pioneering the fungal revolution in health, performance, and sustainable innovation.",
+  robots: { index: true, follow: true },
+  openGraph: {
+    title: "FungMind | Fungi-Powered Biotech",
+    description: "Pioneering the fungal revolution in health, performance, and sustainable innovation.",
+    url: "https://fungmind.com",
+    siteName: "FungMind",
+    locale: "en_US",
+    type: "website",
+    images: [
+      {
+        url: "https://fungmind.com/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "FungMind Logo"
+      }
+    ]
+  },
 };
 
 export default function RootLayout({

@@ -83,17 +83,23 @@ body {
 }
 
 .product-card {
-  transition: all 0.3s ease;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
   background: linear-gradient(135deg, rgba(16, 185, 129, 0.05), rgba(16, 185, 129, 0.01));
+  will-change: transform, box-shadow;
+  backface-visibility: hidden;
 }
 
 .product-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.15);
-  border-color: rgba(16, 185, 129, 0.5);
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.08), rgba(16, 185, 129, 0.03));
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(16, 185, 129, 0.25);
+  border-color: rgba(16, 185, 129, 0.75);
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(16, 185, 129, 0.05));
+}
+
+.product-card:active {
+  transform: translateY(-2px) scale(1.01);
 }
 
 .product-card .product-details {
