@@ -401,18 +401,29 @@ export default function Home() {
                     <div className="text-sm text-zinc-400 mb-1">Product Insights</div>
                     <div className="text-teal-400 font-medium">NeuroMycelium</div>
                   </div>
-                  <button className="text-xs px-2 py-1 bg-teal-900/20 text-teal-400 rounded opacity-0 group-hover:opacity-100 transition-opacity">
-                    View All
+                  <button className="text-xs px-2 py-1 bg-teal-900/20 text-teal-400 rounded hover:bg-teal-500 hover:text-black transition-colors">
+                    View Details
                   </button>
                 </div>
-                <div className="mt-1 text-xs text-zinc-500">
-                  <span className="text-teal-400">42</span> reviews • 
-                  <span className="text-teal-400">4.8</span> avg rating
+                <div className="mt-2 grid grid-cols-2 gap-2">
+                  <div className="text-xs bg-zinc-800/50 px-2 py-1 rounded">
+                    <div className="text-zinc-400">Monthly Sales</div>
+                    <div className="text-teal-400">32</div>
+                  </div>
+                  <div className="text-xs bg-zinc-800/50 px-2 py-1 rounded">
+                    <div className="text-zinc-400">Avg Rating</div>
+                    <div className="text-teal-400">4.8/5</div>
+                  </div>
+                  <div className="text-xs bg-zinc-800/50 px-2 py-1 rounded">
+                    <div className="text-zinc-400">Batch Quality</div>
+                    <div className="text-teal-400">98.7%</div>
+                  </div>
+                  <div className="text-xs bg-zinc-800/50 px-2 py-1 rounded">
+                    <div className="text-zinc-400">Returns</div>
+                    <div className="text-teal-400">0.8%</div>
+                  </div>
                 </div>
-                <div className="mt-1 text-xs text-zinc-500">
-                  <span className="text-teal-400">32</span> units sold this month
-                </div>
-                <div className="mt-2">
+                <div className="mt-3">
                   <div className="flex justify-between text-xs text-zinc-500 mb-1">
                     <span>Inventory</span>
                     <span className="text-teal-400">32/50</span>
@@ -428,18 +439,21 @@ export default function Home() {
                   <div className="text-xs text-zinc-500">
                     Next restock: <span className="text-teal-400">April 12</span>
                   </div>
-                  <button className="text-xs px-2 py-0.5 bg-teal-900/20 text-teal-400 rounded hover:bg-teal-500 hover:text-black transition-colors">
-                    Manage
-                  </button>
-                </div>
-                <div className="mt-2 grid grid-cols-2 gap-2">
-                  <div className="text-xs bg-zinc-800/50 px-2 py-1 rounded">
-                    <div className="text-zinc-400">Batch Quality</div>
-                    <div className="text-teal-400">98.7%</div>
+                  <div className="text-xs text-zinc-500">
+                    Batch: <span className="text-teal-400">FM-2024-03</span>
                   </div>
-                  <div className="text-xs bg-zinc-800/50 px-2 py-1 rounded">
-                    <div className="text-zinc-400">Returns</div>
-                    <div className="text-teal-400">0.8%</div>
+                </div>
+                <div className="mt-3">
+                  <div className="text-xs text-zinc-400 mb-1">Key Metrics</div>
+                  <div className="grid grid-cols-2 gap-2">
+                    <div className="text-xs bg-zinc-800/50 px-2 py-1 rounded">
+                      <div className="text-zinc-400">Customer LTV</div>
+                      <div className="text-teal-400">$1,200</div>
+                    </div>
+                    <div className="text-xs bg-zinc-800/50 px-2 py-1 rounded">
+                      <div className="text-zinc-400">Churn Rate</div>
+                      <div className="text-teal-400">2.1%</div>
+                    </div>
                   </div>
                 </div>
               </div>

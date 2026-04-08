@@ -118,6 +118,7 @@ body {
 .product-card.loading {
   pointer-events: none;
   opacity: 0.7;
+  position: relative;
 }
 
 .product-card.loading::after {
@@ -134,6 +135,33 @@ body {
 .product-card.loading * {
   position: relative;
   z-index: 2;
+}
+
+.product-card .status-indicator {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+}
+
+.product-card .status-indicator.in-stock {
+  background-color: #10b981;
+  animation: pulse 2s infinite;
+}
+
+.product-card .status-indicator.low-stock {
+  background-color: #f59e0b;
+  animation: pulse 1.5s infinite;
+}
+
+.product-card .status-indicator.out-of-stock {
+  background-color: #ef4444;
+}
+
+.product-card .status-indicator.loading {
+  background-color: #3f3f46;
+  animation: pulse 1s infinite;
 }
 
 .product-card {
