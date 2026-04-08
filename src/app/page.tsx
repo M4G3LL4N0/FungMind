@@ -136,6 +136,14 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black/80 to-transparent"></div>
+                <div className="absolute top-2 left-2 flex flex-col gap-1">
+                  <div className="text-xs bg-zinc-800/80 text-zinc-300 px-2 py-1 rounded-full">
+                    Beta-Glucans: 30%
+                  </div>
+                  <div className="text-xs bg-zinc-800/80 text-zinc-300 px-2 py-1 rounded-full">
+                    Erinacines: 0.8%
+                  </div>
+                </div>
               </div>
               <h3 className="text-2xl font-semibold text-zinc-100 mb-0">NeuroMycelium</h3>
               <div className="scientific-name">

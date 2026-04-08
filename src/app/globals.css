@@ -163,6 +163,7 @@ body {
   box-shadow: 0 20px 40px rgba(16, 185, 129, 0.25);
   border-color: rgba(16, 185, 129, 0.75);
   background: linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(16, 185, 129, 0.05));
+  z-index: 10;
 }
 
 .product-card:active {
