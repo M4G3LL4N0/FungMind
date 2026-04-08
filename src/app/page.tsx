@@ -89,12 +89,29 @@ export default function Home() {
                   <span>⭐</span> Featured
                   <span className="ml-1">v2.1</span>
                 </div>
-                <div className="flex items-center gap-1 bg-zinc-900/80 px-2 py-1 rounded-full">
-                  <div className="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></div>
-                  <span className="text-xs text-teal-400">In Stock</span>
-                  <span className="text-xs text-zinc-400 ml-1">• 32 units</span>
-                  <div className="ml-2 text-xs bg-zinc-800 text-zinc-400 px-2 py-0.5 rounded-full">
-                    <span className="text-teal-400">+12</span> incoming
+                <div className="flex flex-col gap-1 bg-zinc-900/80 px-3 py-2 rounded-lg">
+                  <div className="flex items-center gap-2">
+                    <div className="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></div>
+                    <span className="text-xs font-medium text-teal-400">In Stock</span>
+                    <div className="ml-2 text-xs bg-zinc-800 text-zinc-400 px-2 py-0.5 rounded-full">
+                      <span className="text-teal-400">+12</span> incoming
+                    </div>
+                  </div>
+                  <div className="flex items-center justify-between text-xs">
+                    <span className="text-zinc-400">Current Batch</span>
+                    <span className="text-teal-400">FM-2024-03</span>
+                  </div>
+                  <div className="flex items-center justify-between text-xs">
+                    <span className="text-zinc-400">Available Units</span>
+                    <span className="font-mono text-teal-400">32/50</span>
+                  </div>
+                  <div className="mt-1">
+                    <div className="h-1.5 bg-zinc-800 rounded-full overflow-hidden">
+                      <div 
+                        className="h-full bg-gradient-to-r from-teal-500 to-emerald-500" 
+                        style={{ width: `${Math.min(100, (32 / 50) * 100)}%` }}
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -117,7 +134,10 @@ export default function Home() {
                 <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black/80 to-transparent"></div>
               </div>
               <h3 className="text-2xl font-semibold text-zinc-100 mb-0">NeuroMycelium</h3>
-              <div className="scientific-name">Hericium erinaceus • 2:1 extract</div>
+              <div className="scientific-name">
+                <span className="font-medium">Hericium erinaceus</span> • 2:1 extract • 
+                <span className="ml-1 text-teal-400">Standardized 30% polysaccharides</span>
+              </div>
               <div className="flex items-center gap-2 mb-2">
                 <div className="flex text-teal-400">
                   {[...Array(5)].map((_, i) => (
