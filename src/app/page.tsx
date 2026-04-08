@@ -541,22 +541,6 @@ export default function Home(): JSX.Element {
                     <span className="text-teal-400">Next test:</span> 2024-05-01
                   </div>
                 </div>
-                  <div className="mt-2 grid grid-cols-2 gap-2">
-                    <div className="text-xs bg-zinc-800/50 px-2 py-1 rounded">
-                      <div className="text-zinc-400">Batch Purity</div>
-                      <div className="text-teal-400">98.7%</div>
-                    </div>
-                    <div className="text-xs bg-zinc-800/50 px-2 py-1 rounded">
-                      <div className="text-zinc-400">Potency</div>
-                      <div className="text-teal-400">102.3%</div>
-                    </div>
-                  </div>
-                  <div className="mt-2 text-xs text-zinc-500">
-                    <span className="text-teal-400">Last tested:</span> 2024-04-05
-                    <span className="mx-2">|</span>
-                    <span className="text-teal-400">Next test:</span> 2024-05-01
-                  </div>
-                </div>
               </div>
             </div>
           </div>
