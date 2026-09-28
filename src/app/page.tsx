@@ -1,571 +1,187 @@
 import { WaitlistForm } from "@/components/WaitlistForm";
 import Link from "next/link";
-import { NextResponse } from "next/server";
+import { products } from "@/lib/products";
+
+const platformTracks = [
+  {
+    title: "Bioengineering",
+    body: "Strain and extract work for later nutrition products. Formulations stay labeled as research until a batch is actually released.",
+  },
+  {
+    title: "Discovery notes",
+    body: "Literature and compound notes that help pick the next experiment. This is a research aid, not a clinical pipeline scoreboard.",
+  },
+  {
+    title: "Materials track",
+    body: "Later mycelium composites for packaging and textiles. Prototypes only — no commercial material SKU is claimed here.",
+  },
+];
 
 export default function Home(): JSX.Element {
+  const featured = products.slice(0, 3);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center font-sans bg-black">
-      <main className="flex flex-1 w-full max-w-6xl flex-col items-center justify-between py-32 px-8">
-        {/* Hero Section */}
-        <section className="w-full max-w-4xl text-center space-y-8 mb-32">
-          <h1 className="text-6xl font-bold bg-gradient-to-r from-green-400 to-teal-500 bg-clip-text text-transparent">
-            The Fungal Revolution Starts Here
+    <div className="flex flex-col flex-1 items-center font-sans bg-black text-zinc-100">
+      <main className="flex w-full max-w-6xl flex-1 flex-col px-6 py-16 sm:py-24">
+        <section className="mb-24 w-full max-w-4xl space-y-8 text-center sm:mb-32">
+          <p className="text-xs font-semibold uppercase tracking-[0.28em] text-teal-300/80">
+            Research-stage fungal platform
+          </p>
+          <h1 className="bg-gradient-to-r from-green-400 to-teal-500 bg-clip-text text-4xl font-bold text-transparent sm:text-6xl">
+            Performance nutrition grown from fungal biology.
           </h1>
-          <p className="text-xl text-zinc-400">
-            Join the founding circle for exclusive first access to our groundbreaking fungal innovations.
+          <p className="text-lg text-zinc-400 sm:text-xl">
+            FungMind is a research-stage platform for mushroom-based recovery products
+            and later mycelium materials. Nothing on this page is a clinical claim,
+            a live inventory count, or a published sales figure.
           </p>
-          <div className="space-y-4">
-            <div className="flex flex-col items-center space-y-2">
-              <div className="flex items-center justify-center gap-2">
-                <div className="text-sm text-zinc-500">
-                  Limited to 100 founding members - <span className="countdown text-teal-400">23:59:59</span> remaining
-                </div>
-                <div className="text-xs px-2 py-0.5 bg-teal-900/50 text-teal-400 rounded-full">
-                  Early Access
-                </div>
-              </div>
-              <div className="w-full max-w-md">
-                <div className="flex justify-between text-xs text-zinc-500 mb-1">
-                  <span>0</span>
-                  <span>50</span>
-                  <span>100</span>
-                </div>
-                <div className="bg-zinc-800 rounded-full h-2 overflow-hidden">
-                  <div 
-                    className="progress-bar h-full" 
-                    style={{ width: `${Math.min(100, (75 / 100) * 100)}%` }}
-                  ></div>
-                </div>
-                <div className="text-xs text-zinc-500 mt-1 text-right">
-                  <span className="text-teal-400">75</span>/100 spots claimed
-                </div>
-              </div>
-            </div>
+          <div className="flex flex-col items-center space-y-5">
             <WaitlistForm />
-          </div>
-        </section>
-
-        {/* Platform Thesis */}
-        <section className="w-full max-w-4xl space-y-12 mb-32">
-          <h2 className="text-4xl font-bold text-zinc-100">Our Platform</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="space-y-4">
-              <h3 className="text-2xl font-semibold text-zinc-100">Bioengineering</h3>
-              <p className="text-zinc-400">
-                Advanced fungal strain development for targeted therapeutic applications
-              </p>
-            </div>
-            <div className="space-y-4">
-              <h3 className="text-2xl font-semibold text-zinc-100">AI-Driven Discovery</h3>
-              <p className="text-zinc-400">
-                Machine learning models accelerating fungal compound identification
-              </p>
-            </div>
-            <div className="space-y-4">
-              <h3 className="text-2xl font-semibold text-zinc-100">Sustainable Production</h3>
-              <p className="text-zinc-400">
-                Closed-loop systems for eco-friendly fungal cultivation
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Featured Products */}
-        <section className="w-full max-w-6xl space-y-12 mb-32">
-          <div className="flex items-end justify-between">
-            <h2 className="text-4xl font-bold text-zinc-100">Featured Products</h2>
-            <div className="text-sm text-zinc-500 flex items-center gap-2">
-              <span>Latest Batch:</span>
-              <span className="text-teal-400">FM-2024-04</span>
-            </div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div 
-              className="p-8 border border-zinc-800 rounded-lg hover:border-teal-500 transition-all duration-300 group hover:shadow-[0_0_30px_rgba(16,185,129,0.1)] relative opacity-100 hover:opacity-100 product-card loading"
-              data-product="neuro-mycelium"
-              data-version="2.1"
-              data-testid="product-card"
+            <Link
+              href="/products"
+              className="text-sm font-medium text-teal-300 underline-offset-4 hover:underline"
             >
-              <div className="absolute top-4 right-4 flex flex-col gap-2 items-end">
-                <div className="bg-gradient-to-r from-teal-500 to-emerald-500 text-black px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1">
-                  <span>⭐</span> Featured
-                  <span className="ml-1">v2.1</span>
-                </div>
-                <div className="flex flex-col gap-1 bg-zinc-900/80 px-3 py-2 rounded-lg">
-                  <div className="flex items-center gap-2">
-                    <div className="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></div>
-                    <span className="text-xs font-medium text-teal-400">In Stock</span>
-                    <div className="ml-2 text-xs bg-zinc-800 text-zinc-400 px-2 py-0.5 rounded-full">
-                      <span className="text-teal-400">+12</span> incoming
-                    </div>
-                  </div>
-                  <div className="flex items-center justify-between text-xs">
-                    <span className="text-zinc-400">Current Batch</span>
-                    <span className="text-teal-400">FM-2024-03</span>
-                  </div>
-                  <div className="flex items-center justify-between text-xs">
-                    <span className="text-zinc-400">Available Units</span>
-                    <span className="font-mono text-teal-400">32/50</span>
-                  </div>
-                  <div className="mt-1">
-                    <div className="h-1.5 bg-zinc-800 rounded-full overflow-hidden">
-                      <div 
-                        className="h-full bg-gradient-to-r from-teal-500 to-emerald-500" 
-                        style={{ width: `${Math.min(100, (32 / 50) * 100)}%` }}
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="absolute top-4 left-4 flex flex-col gap-2">
-                <div className="bg-red-500/90 text-white px-3 py-1 rounded-full text-xs font-medium flex items-center gap-1">
-                  <span>⏳</span> Waitlist Only
-                </div>
-                <div className="text-xs bg-zinc-800/80 text-zinc-300 px-2 py-1 rounded-full">
-                  Batch #FM-2024-03
-                </div>
-              </div>
-              <div className="h-40 bg-gradient-to-br from-zinc-900 to-zinc-800 rounded-md mb-4 flex items-center justify-center group-hover:scale-105 transition-transform duration-300 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50"></div>
-                <div className="relative z-10 text-center p-4 w-full">
-                  <span className="text-5xl">🍄</span>
-                  <div className="mt-2 text-xs bg-black/50 px-2 py-1 rounded text-zinc-300 inline-block">
-                    Neurotropic Formula v2.1
-                  </div>
-                  <div className="absolute bottom-2 left-2 right-2 flex justify-between text-xs text-zinc-400">
-                    <span>Lot: FM-2024-03</span>
-                    <span>Exp: 2025-06</span>
-                  </div>
-                </div>
-                <div className="absolute top-2 right-2 flex flex-col gap-1">
-                  <div className="text-xs bg-zinc-800/80 text-zinc-300 px-2 py-1 rounded-full">
-                    HPLC Verified
-                  </div>
-                  <div className="text-xs bg-zinc-800/80 text-zinc-300 px-2 py-1 rounded-full">
-                    GMP Certified
-                  </div>
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 h-1/3 bg-gradient-to-t from-black/80 to-transparent"></div>
-                <div className="absolute top-2 left-2 flex flex-col gap-1">
-                  <div className="text-xs bg-zinc-800/80 text-zinc-300 px-2 py-1 rounded-full">
-                    Beta-Glucans: 30%
-                  </div>
-                  <div className="text-xs bg-zinc-800/80 text-zinc-300 px-2 py-1 rounded-full">
-                    Erinacines: 0.8%
-                  </div>
-                </div>
-              </div>
-              <h3 className="text-2xl font-semibold text-zinc-100 mb-0">NeuroMycelium</h3>
-              <div className="scientific-name">
-                <div className="flex items-center gap-2">
-                  <span className="font-medium">Hericium erinaceus</span>
-                  <span className="text-xs bg-zinc-800 text-teal-400 px-1.5 py-0.5 rounded-full">
-                    FM-2024-03
-                  </span>
-                </div>
-                <div className="flex flex-wrap items-center gap-x-2 gap-y-1 mt-1">
-                  <span className="text-xs bg-zinc-800/50 text-teal-400 px-2 py-0.5 rounded-full flex items-center gap-1">
-                    <span>2:1 extract</span>
-                  </span>
-                  <span className="text-xs bg-zinc-800/50 text-teal-400 px-2 py-0.5 rounded-full flex items-center gap-1">
-                    <span>30% β-glucans</span>
-                  </span>
-                  <span className="text-xs bg-zinc-800/50 text-teal-400 px-2 py-0.5 rounded-full flex items-center gap-1">
-                    <span>0.8% erinacines</span>
-                  </span>
-                  <span className="text-xs bg-zinc-800/50 text-teal-400 px-2 py-0.5 rounded-full flex items-center gap-1">
-                    <span>HPLC verified</span>
-                  </span>
-                </div>
-              </div>
-              <div className="flex items-center gap-2 mb-2">
-                <div className="flex text-teal-400">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i}>★</span>
-                  ))}
-                </div>
-                <span className="text-sm text-zinc-500">(4.8/5)</span>
-                <span className="text-xs bg-zinc-800 text-teal-400 px-2 py-0.5 rounded-full">
-                  42 reviews
-                </span>
-              </div>
-              <p className="text-zinc-400 mb-4">
-                Our flagship neurotropic formula combines <span className="text-teal-400">Lion's Mane (Hericium erinaceus)</span> with synergistic nootropics to support:
-              </p>
-              <ul className="text-sm text-zinc-400 space-y-2 mb-4">
-                <li className="flex items-start gap-2">
-                  <span className="text-teal-400 mt-0.5">✓</span>
-                  <span>Memory formation & recall</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-teal-400 mt-0.5">✓</span>
-                  <span>Neuroplasticity & BDNF production</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-teal-400 mt-0.5">✓</span>
-                  <span>Sustained focus without jitters</span>
-                </li>
-              </ul>
-              <div className="product-details">
-                <div className="mb-4">
-                  <h4 className="text-sm font-medium text-zinc-300 mb-2">Key Benefits:</h4>
-                  <ul className="text-xs text-zinc-400 space-y-1">
-                    <li className="flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-teal-400"></span>
-                      <span>+27% memory recall in clinical trials</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-teal-400"></span>
-                      <span>Supports neurogenesis and BDNF production</span>
-                    </li>
-                    <li className="flex items-center gap-2">
-                      <span className="w-2 h-2 rounded-full bg-teal-400"></span>
-                      <span>Delayed release formula for 12-hour efficacy</span>
-                    </li>
-                  </ul>
-                </div>
-                <div className="text-xs text-zinc-500 space-y-1">
-                  <p className="flex items-center gap-1">
-                    <span>🔬</span>
-                    <span>Batch tested for purity and potency (HPLC, LC-MS)</span>
-                  </p>
-                  <p className="flex items-center gap-1">
-                    <span>🌱</span>
-                    <span>Vegan, non-GMO, gluten-free</span>
-                  </p>
-                  <p className="flex items-center gap-1">
-                    <span>🏭</span>
-                    <span>GMP certified facility</span>
-                  </p>
-                  <p className="flex items-center gap-1">
-                    <span>📊</span>
-                    <span>Full COA available for members</span>
-                  </p>
-                </div>
-              </div>
-              <div className="flex flex-wrap gap-2 mb-4">
-                <span className="px-2 py-1 bg-zinc-800 text-teal-400 text-xs rounded-full">Memory</span>
-                <span className="px-2 py-1 bg-zinc-800 text-teal-400 text-xs rounded-full">Focus</span>
-                <span className="px-2 py-1 bg-zinc-800 text-teal-400 text-xs rounded-full">Neuroprotection</span>
-              </div>
-              <div className="flex items-baseline gap-2">
-                <div className="text-xl font-semibold text-teal-400">
-                  $49.99 <span className="text-sm text-zinc-500">/ month</span>
-                </div>
-                <div className="text-xs text-zinc-500 line-through">$59.99</div>
-                <div className="ml-2 text-xs bg-teal-900/30 text-teal-400 px-2 py-0.5 rounded-full">
-                  Save 17%
-                </div>
-              </div>
-              <div className="mt-1 text-xs text-zinc-500 flex items-center gap-1">
-                <span>🔬</span>
-                <span>Third-party tested</span>
-              </div>
-              <div className="mt-2">
-                <div className="flex justify-between text-xs text-zinc-500 mb-1">
-                  <span>0</span>
-                  <span>25</span>
-                  <span>50</span>
-                </div>
-                <div className="bg-zinc-800 rounded-full h-1.5 overflow-hidden">
-                  <div 
-                    className="progress-bar h-full" 
-                    style={{ width: `${Math.min(100, (32 / 50) * 100)}%` }}
-                  ></div>
-                </div>
-                <div className="text-xs text-zinc-500 mt-1 text-right">
-                  <span className="text-teal-400">32</span>/50 remaining
-                </div>
-              </div>
-              <div className="mt-2 text-xs text-teal-400 flex items-center gap-1 bg-teal-900/20 px-2 py-1 rounded-full">
-                <span>⏳</span>
-                <span>Founder's Price - Limited Time</span>
-                <span className="ml-1 text-zinc-400">(expires in 3d)</span>
-              </div>
-            </div>
-
-            <div className="p-8 border border-zinc-800 rounded-lg opacity-50 cursor-not-allowed relative">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="shimmer w-full h-full"></div>
-              </div>
-              <div className="h-40 bg-gradient-to-br from-zinc-900 to-zinc-800 rounded-md mb-4 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-                <span className="text-5xl">🌿</span>
-              </div>
-              <h3 className="text-2xl font-semibold text-zinc-100 mb-2">AdaptoFungi</h3>
-              <div className="flex items-center gap-2 mb-2">
-                <div className="flex text-teal-400">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i}>★</span>
-                  ))}
-                </div>
-                <span className="text-sm text-zinc-500">(4.7/5)</span>
-              </div>
-              <p className="text-zinc-400 mb-4">
-                Potent Cordyceps and Reishi formulation designed to boost energy, reduce fatigue, and enhance physical performance. Ideal for athletes and high-performers.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                <span className="px-2 py-1 bg-zinc-800 text-teal-400 text-xs rounded-full">Energy</span>
-                <span className="px-2 py-1 bg-zinc-800 text-teal-400 text-xs rounded-full">Recovery</span>
-                <span className="px-2 py-1 bg-zinc-800 text-teal-400 text-xs rounded-full">Adaptogen</span>
-              </div>
-              <div className="text-xl font-semibold text-teal-400">
-                $39.99 <span className="text-sm text-zinc-500">/ month</span>
-              </div>
-            </div>
-
-            <div className="p-8 border border-zinc-800 rounded-lg opacity-50 cursor-not-allowed">
-              <div className="h-40 bg-gradient-to-br from-zinc-900 to-zinc-800 rounded-md mb-4 flex items-center justify-center group-hover:scale-105 transition-transform duration-300">
-                <span className="text-5xl">🧠</span>
-              </div>
-              <h3 className="text-2xl font-semibold text-zinc-100 mb-2">MycoGut</h3>
-              <div className="flex items-center gap-2 mb-2">
-                <div className="flex text-teal-400">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i}>★</span>
-                  ))}
-                </div>
-                <span className="text-sm text-zinc-500">(4.9/5)</span>
-              </div>
-              <p className="text-zinc-400 mb-4">
-                Advanced fungal microbiome formula supporting gut health, immune function, and mental well-being through the gut-brain axis. Backed by clinical research.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                <span className="px-2 py-1 bg-zinc-800 text-teal-400 text-xs rounded-full">Digestion</span>
-                <span className="px-2 py-1 bg-zinc-800 text-teal-400 text-xs rounded-full">Immunity</span>
-                <span className="px-2 py-1 bg-zinc-800 text-teal-400 text-xs rounded-full">Mood</span>
-              </div>
-              <div className="text-xl font-semibold text-teal-400">
-                $59.99 <span className="text-sm text-zinc-500">/ month</span>
-              </div>
-            </div>
+              Explore the product tracks
+            </Link>
           </div>
-          <div className="text-center pt-8 space-y-4">
-            <a href="/products" className="inline-flex items-center justify-center px-6 py-3 border border-teal-500 text-teal-500 rounded-lg hover:bg-teal-500 hover:text-black transition-colors duration-300 font-semibold">
+        </section>
+
+        <section className="mb-24 w-full max-w-4xl space-y-10 sm:mb-32">
+          <h2 className="text-3xl font-bold text-zinc-100 sm:text-4xl">Our Platform</h2>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+            {platformTracks.map((track) => (
+              <article key={track.title} className="space-y-3 rounded-2xl border border-zinc-800 bg-zinc-950/60 p-5">
+                <h3 className="text-2xl font-semibold text-zinc-100">{track.title}</h3>
+                <p className="text-zinc-400">{track.body}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-24 w-full space-y-10 sm:mb-32">
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <h2 className="text-3xl font-bold text-zinc-100 sm:text-4xl">Featured Products</h2>
+            <p className="text-sm text-zinc-500">Formulation tracks · not a storefront with live stock</p>
+          </div>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+            {featured.map((product) => (
+              <article
+                key={product.slug}
+                className="relative rounded-lg border border-zinc-800 p-8 transition hover:border-teal-500/60"
+              >
+                <p className="text-xs uppercase tracking-[0.2em] text-teal-400/80">{product.category}</p>
+                <h3 className="mt-3 text-2xl font-semibold text-zinc-100">{product.title}</h3>
+                <p className="mt-1 italic text-emerald-100/70">{product.species}</p>
+                <p className="mt-4 text-sm text-zinc-400">{product.promise}</p>
+                <p className="mt-3 text-xs text-zinc-500">Stage: {product.stage}</p>
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {product.actives.slice(0, 2).map((active) => (
+                    <span key={active} className="rounded-full bg-zinc-800 px-2 py-1 text-xs text-teal-400">
+                      {active}
+                    </span>
+                  ))}
+                </div>
+                <Link
+                  href={`/products/${product.slug}`}
+                  className="mt-6 inline-block text-sm text-teal-300 underline-offset-4 hover:underline"
+                >
+                  Open this track
+                </Link>
+              </article>
+            ))}
+          </div>
+          <div className="space-y-3 pt-4 text-center">
+            <Link
+              href="/products"
+              className="inline-flex items-center justify-center rounded-lg border border-teal-500 px-6 py-3 font-semibold text-teal-500 transition-colors duration-300 hover:bg-teal-500 hover:text-black"
+            >
               Explore All Products →
-            </a>
-            <p className="text-sm text-zinc-500">Discover our full range of fungal-powered solutions</p>
-          </div>
-        </section>
-
-        {/* Featured Research */}
-        <section className="w-full max-w-4xl space-y-12 mb-32">
-          <h2 className="text-4xl font-bold text-zinc-100">Featured Research</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="p-6 border border-zinc-800 rounded-lg hover:border-teal-500 transition-all duration-300 group">
-              <h3 className="text-2xl font-semibold text-zinc-100 mb-3 group-hover:text-teal-400 transition-colors">Lion's Mane & Neurogenesis</h3>
-              <p className="text-zinc-400 mb-4">
-                Recent study in the Journal of Neurochemistry shows Hericium erinaceus (Lion's Mane) stimulates NGF production and promotes neurogenesis in the hippocampus.
-              </p>
-              <div className="flex items-center justify-between">
-                <div className="flex items-center text-sm text-teal-400">
-                  <span className="mr-2">PMID: 32812264</span>
-                  <span>2021 Meta-Analysis</span>
-                </div>
-                <button className="text-xs px-3 py-1 border border-teal-500 rounded-full hover:bg-teal-500 hover:text-black transition-colors">
-                  Read Study
-                </button>
-              </div>
-            </div>
-            <div className="p-6 border border-zinc-800 rounded-lg hover:border-teal-500 transition-all duration-300">
-              <h3 className="text-2xl font-semibold text-zinc-100 mb-3">Cordyceps & VO2 Max</h3>
-              <p className="text-zinc-400 mb-4">
-                Clinical trial demonstrates Cordyceps militaris supplementation increases VO2 max by 11% and reduces fatigue in endurance athletes.
-              </p>
-              <div className="flex items-center text-sm text-teal-400">
-                <span className="mr-2">PMID: 33533395</span>
-                <span>2022 RCT</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Why Now */}
-        <section className="w-full max-w-4xl space-y-12 mb-32">
-          <h2 className="text-4xl font-bold text-zinc-100">Why Now?</h2>
-          <div className="space-y-4">
-            <p className="text-zinc-400">
-              With advancements in biotechnology and AI, we're at an inflection point where fungal-based solutions can address critical challenges in healthcare, sustainability, and human performance.
-            </p>
-            <p className="text-zinc-400">
-              FungMind is positioned at the forefront of this revolution, leveraging cutting-edge science to unlock fungi's full potential.
+            </Link>
+            <p className="text-sm text-zinc-500">
+              Tracks describe intended formulations. Benefits are design goals, not trial outcomes.
             </p>
           </div>
         </section>
 
-        {/* Member Dashboard */}
-        <section className="w-full max-w-4xl space-y-8 mb-32">
-          <h2 className="text-4xl font-bold text-zinc-100">Founder Dashboard</h2>
-          <div className="border border-zinc-800 rounded-lg p-6">
-            <h3 className="text-xl font-semibold text-zinc-100 mb-4">Your Access</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-              <div className="p-4 bg-zinc-900/50 rounded-lg border border-zinc-800 hover:border-teal-500 transition-colors">
-                <div className="text-sm text-zinc-400 mb-1">Founder Status</div>
-                <div className="text-teal-400 font-medium flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full bg-teal-400 animate-pulse"></span>
-                  Active
-                </div>
-                <div className="mt-2 text-xs text-zinc-500">
-                  Since: <span className="text-teal-400">Mar 15, 2024</span>
-                </div>
-              </div>
-              <div className="p-4 bg-zinc-900/50 rounded-lg border border-zinc-800 hover:border-teal-500 transition-colors">
-                <div className="text-sm text-zinc-400 mb-1">Priority Access</div>
-                <div className="text-teal-400 font-medium">Tier 1</div>
-                <div className="mt-2 text-xs text-zinc-500">
-                  Benefits: <span className="text-teal-400">Early Access + Discounts</span>
-                </div>
-              </div>
-              <div className="p-4 bg-zinc-900/50 rounded-lg border border-zinc-800 hover:border-teal-500 transition-colors">
-                <div className="text-sm text-zinc-400 mb-1">Next Shipment</div>
-                <div className="text-teal-400 font-medium">April 15, 2024</div>
-                <div className="mt-1 text-xs text-zinc-500">
-                  <span className="text-teal-400">3</span> products incoming
-                </div>
-                <div className="mt-1 text-xs">
-                  <span className="text-zinc-500">Tracking: </span>
-                  <span className="text-teal-400">FM-2024-03-42</span>
-                </div>
-                <div className="mt-2">
-                  <div className="flex justify-between text-xs text-zinc-500 mb-1">
-                    <span>Shipment Progress</span>
-                    <span className="text-teal-400">75%</span>
-                  </div>
-                  <div className="h-1.5 bg-zinc-800 rounded-full overflow-hidden">
-                    <div 
-                      className="h-full bg-gradient-to-r from-teal-500 to-emerald-500" 
-                      style={{ width: `75%` }}
-                    />
-                  </div>
-                  <div className="mt-2 grid grid-cols-2 gap-2">
-                    <div className="text-xs bg-zinc-800/50 px-2 py-1 rounded">
-                      <div className="text-zinc-400">On Time</div>
-                      <div className="text-teal-400">95%</div>
-                    </div>
-                    <div className="text-xs bg-zinc-800/50 px-2 py-1 rounded">
-                      <div className="text-zinc-400">Damages</div>
-                      <div className="text-teal-400">0.5%</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="p-4 bg-zinc-900/50 rounded-lg border border-zinc-800 hover:border-teal-500 transition-colors group">
-                <div className="flex justify-between items-start">
-                  <div>
-                    <div className="text-sm text-zinc-400 mb-1">Product Insights</div>
-                    <div className="text-teal-400 font-medium">NeuroMycelium</div>
-                  </div>
-                  <button className="text-xs px-2 py-1 bg-teal-900/20 text-teal-400 rounded hover:bg-teal-500 hover:text-black transition-colors">
-                    View Details
-                  </button>
-                </div>
-                <div className="mt-2 grid grid-cols-2 gap-2">
-                  <div className="text-xs bg-zinc-800/50 px-2 py-1 rounded">
-                    <div className="text-zinc-400">Monthly Sales</div>
-                    <div className="text-teal-400">32</div>
-                  </div>
-                  <div className="text-xs bg-zinc-800/50 px-2 py-1 rounded">
-                    <div className="text-zinc-400">Avg Rating</div>
-                    <div className="text-teal-400">4.8/5</div>
-                  </div>
-                  <div className="text-xs bg-zinc-800/50 px-2 py-1 rounded">
-                    <div className="text-zinc-400">Batch Quality</div>
-                    <div className="text-teal-400">98.7%</div>
-                  </div>
-                  <div className="text-xs bg-zinc-800/50 px-2 py-1 rounded">
-                    <div className="text-zinc-400">Returns</div>
-                    <div className="text-teal-400">0.8%</div>
-                  </div>
-                </div>
-                <div className="mt-3">
-                  <div className="flex justify-between text-xs text-zinc-500 mb-1">
-                    <span>Inventory</span>
-                    <span className="text-teal-400">32/50</span>
-                  </div>
-                  <div className="h-1.5 bg-zinc-800 rounded-full overflow-hidden">
-                    <div 
-                      className="h-full bg-gradient-to-r from-teal-500 to-emerald-500" 
-                      style={{ width: `${Math.min(100, (32 / 50) * 100)}%` }}
-                    />
-                  </div>
-                </div>
-                <div className="mt-2 flex items-center justify-between">
-                  <div className="text-xs text-zinc-500">
-                    Next restock: <span className="text-teal-400">April 12</span>
-                  </div>
-                  <div className="text-xs text-zinc-500">
-                    Batch: <span className="text-teal-400">FM-2024-03</span>
-                  </div>
-                </div>
-                <div className="mt-2 grid grid-cols-2 gap-2">
-                  <div className="text-xs bg-zinc-800/50 px-2 py-1 rounded">
-                    <div className="text-zinc-400">Yield</div>
-                    <div className="text-teal-400">92.5%</div>
-                  </div>
-                  <div className="text-xs bg-zinc-800/50 px-2 py-1 rounded">
-                    <div className="text-zinc-400">Contamination</div>
-                    <div className="text-teal-400">0.1%</div>
-                  </div>
-                </div>
-                <div className="mt-3">
-                  <div className="text-xs text-zinc-400 mb-1">Key Metrics</div>
-                  <div className="grid grid-cols-3 gap-2">
-                    <div className="text-xs bg-zinc-800/50 px-2 py-1 rounded">
-                      <div className="text-zinc-400">LTV</div>
-                      <div className="text-teal-400">$1,200</div>
-                      <div className="text-[0.6rem] text-zinc-500 mt-0.5">+12% MoM</div>
-                    </div>
-                    <div className="text-xs bg-zinc-800/50 px-2 py-1 rounded">
-                      <div className="text-zinc-400">Churn</div>
-                      <div className="text-teal-400">2.1%</div>
-                      <div className="text-[0.6rem] text-zinc-500 mt-0.5">-0.3% MoM</div>
-                    </div>
-                    <div className="text-xs bg-zinc-800/50 px-2 py-1 rounded">
-                      <div className="text-zinc-400">NPS</div>
-                      <div className="text-teal-400">72</div>
-                      <div className="text-[0.6rem] text-zinc-500 mt-0.5">+8 MoM</div>
-                    </div>
-                  </div>
-                  <div className="mt-2 grid grid-cols-2 gap-2">
-                    <div className="text-xs bg-zinc-800/50 px-2 py-1 rounded">
-                      <div className="text-zinc-400">Batch Purity</div>
-                      <div className="text-teal-400">98.7%</div>
-                    </div>
-                    <div className="text-xs bg-zinc-800/50 px-2 py-1 rounded">
-                      <div className="text-zinc-400">Potency</div>
-                      <div className="text-teal-400">102.3%</div>
-                    </div>
-                  </div>
-                  <div className="mt-2 text-xs text-zinc-500">
-                    <span className="text-teal-400">Last tested:</span> 2024-04-05
-                    <span className="mx-2">|</span>
-                    <span className="text-teal-400">Next test:</span> 2024-05-01
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-            </div>
-          </div>
-        </section>
-
-      {/* Final CTA */}
-        <section className="w-full max-w-4xl text-center space-y-8">
-          <h2 className="text-4xl font-bold text-zinc-100">
-            Be Among the First
-          </h2>
-          <p className="text-xl text-zinc-400">
-            Secure your spot as a founding member before we open to the public.
+        <section className="mb-24 w-full max-w-4xl space-y-10 sm:mb-32">
+          <h2 className="text-3xl font-bold text-zinc-100 sm:text-4xl">Featured Research</h2>
+          <p className="text-zinc-400">
+            Public papers we watch while designing extracts. Citing a paper is not the
+            same as claiming FungMind ran the study or that a product is proven.
           </p>
-          <div className="space-y-4 animate-fade-in">
-            <div className="flex items-center justify-center gap-2">
-              <div className="h-2 w-2 rounded-full bg-teal-500 animate-pulse"></div>
-              <p className="text-sm text-zinc-500">
-                <span className="font-medium text-teal-400">42</span> spots remaining of 100
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+            <article className="rounded-lg border border-zinc-800 p-6">
+              <h3 className="mb-3 text-2xl font-semibold text-zinc-100">Lion&apos;s Mane literature</h3>
+              <p className="mb-4 text-zinc-400">
+                Hericium erinaceus appears in published work on nerve-growth-factor
+                pathways. We use that literature to choose markers to measure later —
+                not as a product efficacy claim.
               </p>
+              <p className="text-sm text-teal-400">Watchlist note · not a FungMind trial</p>
+            </article>
+            <article className="rounded-lg border border-zinc-800 p-6">
+              <h3 className="mb-3 text-2xl font-semibold text-zinc-100">Cordyceps literature</h3>
+              <p className="mb-4 text-zinc-400">
+                Cordyceps militaris is discussed in endurance and fatigue papers.
+                Those studies are external. This site does not publish a VO2 or
+                fatigue percentage for a FungMind SKU.
+              </p>
+              <p className="text-sm text-teal-400">Watchlist note · not a FungMind trial</p>
+            </article>
+          </div>
+        </section>
+
+        <section className="mb-24 w-full max-w-4xl space-y-8 sm:mb-32">
+          <h2 className="text-3xl font-bold text-zinc-100 sm:text-4xl">Why Now?</h2>
+          <div className="space-y-4 text-zinc-400">
+            <p>
+              Better extraction, cheaper sequencing, and clearer marker assays make
+              fungal nutrition easier to specify than a decade ago. That is a
+              research opening, not a market-share claim.
+            </p>
+            <p>
+              FungMind is building the product tracks and the later materials lane
+              in public so the science story stays attached to the actual stage of
+              the work.
+            </p>
+          </div>
+        </section>
+
+        <section className="mb-24 w-full max-w-4xl space-y-8 sm:mb-32">
+          <h2 className="text-3xl font-bold text-zinc-100 sm:text-4xl">Founder Dashboard</h2>
+          <p className="text-sm text-zinc-500">
+            Concept preview of what a member workspace could show. Figures below are
+            labels for empty states, not live sales, NPS, or shipment data.
+          </p>
+          <div className="rounded-lg border border-zinc-800 p-6">
+            <h3 className="mb-4 text-xl font-semibold text-zinc-100">Access you would see later</h3>
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
+              {[
+                { k: "Founder status", v: "Waitlist", d: "Join from the form above" },
+                { k: "Priority access", v: "Not assigned", d: "Tiers ship when batches exist" },
+                { k: "Next shipment", v: "None scheduled", d: "No tracking number to show" },
+                { k: "Product insights", v: "Tracks only", d: "Open /products for the catalog" },
+              ].map((cell) => (
+                <div key={cell.k} className="rounded-lg border border-zinc-800 bg-zinc-900/50 p-4">
+                  <div className="text-sm text-zinc-400">{cell.k}</div>
+                  <div className="mt-1 font-medium text-teal-400">{cell.v}</div>
+                  <div className="mt-2 text-xs text-zinc-500">{cell.d}</div>
+                </div>
+              ))}
             </div>
+          </div>
+        </section>
+
+        <section className="w-full max-w-4xl space-y-8 text-center">
+          <h2 className="text-3xl font-bold text-zinc-100 sm:text-4xl">Be Among the First</h2>
+          <p className="text-lg text-zinc-400 sm:text-xl">
+            Request access if you want research updates. We do not publish remaining
+            seats, countdown clocks, or conversion rates.
+          </p>
+          <div className="flex flex-col items-center space-y-4">
             <WaitlistForm />
             <p className="text-xs text-zinc-600">
-              By joining, you'll get early access and exclusive founder pricing
+              The form posts to the waitlist route. If that route is offline, you will see an error instead of a fake confirmation.
             </p>
           </div>
         </section>
